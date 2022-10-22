@@ -4,18 +4,13 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { Home } from "./Home";
 
 function App() {
   return (
     <div>
       <Header />
-      <div id="peaks-new">
-        <h1>New post</h1>
-      </div>
-
-      <div id="peaks-index">
-        <h1>All posts</h1>
-      </div>
+      <Home />
       <Footer />
     </div>
   );
