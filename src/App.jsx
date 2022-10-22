@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 import { Header } from "./Header";
+import { Footer } from "./Footer";
 
 function App() {
   return (
@@ -15,10 +16,7 @@ function App() {
       <div id="peaks-index">
         <h1>All posts</h1>
       </div>
-
-      <footer>
-        <p>Copyright 20XX</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
