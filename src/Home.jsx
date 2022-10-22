@@ -1,11 +1,11 @@
+import { PeaksIndex } from "./PeaksIndex";
+
 export function Home() {
   return (
     <div>
+      <PeaksIndex />
       <div id="peaks-new">
-        <h1>New post</h1>
-      </div>
-      <div id="peaks-index">
-        <h1>All posts</h1>
+        <h1>New Peak</h1>
       </div>
     </div>
   );
