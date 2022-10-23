@@ -4,6 +4,7 @@
 
 #peaks-show img {
   width: 300px;
+  object-fit: cover;
 }
 
 html {
