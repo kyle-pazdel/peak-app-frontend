@@ -6,7 +6,7 @@ import { PeaksShow } from "./PeaksShow";
 
 export function Home() {
   const [peaks, setPeaks] = useState([]);
-  const [isPeakVisible, setIsPeakVisible] = useState(false);
+  const [isPeakShowVisible, setIsPeakShowVisible] = useState(false);
   const [currentPeak, setCurrentPeak] = useState({});
 
   const handleIndexPeaks = () => {
@@ -17,22 +17,21 @@ export function Home() {
   };
 
   const handleShowPeak = (peak) => {
-    setIsPeakVisible(true);
+    setIsPeakShowVisible(true);
     setCurrentPeak(peak);
   };
 
   const handleHidePeak = () => {
-    setIsPeakVisible(false);
+    setIsPeakShowVisible(false);
   };
 
   useEffect(handleIndexPeaks, []);
 
   return (
     <div>
-      <PeaksIndex peaks={peaks} onSelect={handleShowPeak} />
-      <Modal>
-        <PeaksShow />
-        <p>TEST</p>
+      <PeaksIndex peaks={peaks} onSelectPeak={handleShowPeak} />
+      <Modal show={isPeakShowVisible} onClose={handleHidePeak}>
+        <PeaksShow peak={currentPeak} />
       </Modal>
       <div id="peaks-new">
         <h1>New Peak</h1>

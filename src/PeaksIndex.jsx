@@ -13,7 +13,9 @@ export function PeaksIndex(props) {
             <p className="card-text bg-custom-1">{peak.description}</p>
             <p>{peak.location}</p>
             <p>{peak.elevation}</p>
-            <button className="btn btn-primary">MoreInfo</button>
+            <button className="btn btn-primary" onClick={() => props.onSelectPeak(peak)}>
+              More Info
+            </button>
           </div>
         </div>
       ))}
