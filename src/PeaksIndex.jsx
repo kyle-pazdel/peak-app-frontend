@@ -13,7 +13,6 @@ export function PeaksIndex(props) {
           <p>{peak.elevation}</p>
         </div>
       ))}
-      <p>Peaks Go Here!</p>
     </div>
   );
 }
