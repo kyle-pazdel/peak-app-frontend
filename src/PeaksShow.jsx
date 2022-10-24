@@ -98,13 +98,12 @@ export function PeaksShow(props) {
             ></textarea>
           </div>
           <div className="col-12">
-            <input
-              type="submit"
-              id="submit"
-              name="submit"
-              defaultValue={props.submit}
-              className="btn btn-primary"
-            ></input>
+            <input type="submit" id="submit" name="submit" className="btn btn-primary"></input>
+          </div>
+          <div className="col-12 pt-3">
+            <button className=" btn btn-sm btn-outline-primary" onClick={handleDestroyPeak}>
+              Delete Peak
+            </button>
           </div>
         </form>
       </div>
