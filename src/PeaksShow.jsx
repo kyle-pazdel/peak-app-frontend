@@ -6,6 +6,10 @@ export function PeaksShow(props) {
     event.target.reset();
   };
 
+  const handleClick = () => {
+    props.onDestroyPeak(props.peak);
+  };
+
   return (
     <div>
       <div id="peaks-show">
@@ -101,7 +105,7 @@ export function PeaksShow(props) {
             <input type="submit" id="submit" name="submit" className="btn btn-primary"></input>
           </div>
           <div className="col-12 pt-3">
-            <button className=" btn btn-sm btn-outline-primary" onClick={handleDestroyPeak}>
+            <button className=" btn btn-sm btn-outline-primary" onClick={handleClick}>
               Delete Peak
             </button>
           </div>

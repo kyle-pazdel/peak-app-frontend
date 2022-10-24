@@ -49,13 +49,21 @@ export function Home() {
     setIsPeakShowVisible(false);
   };
 
+  const handleDestroyPeak = (peak) => {
+    console.log("handleDestroyPeak", peak);
+    axios.delete("http://localhost:3000/peaks/" + peak.id + ".json").then((response) => {
+      setPeaks(peaks.filter((p) => p.id !== peak.id));
+      handleHidePeak();
+    });
+  };
+
   useEffect(handleIndexPeaks, []);
 
   return (
     <div>
       <PeaksIndex peaks={peaks} onSelectPeak={handleShowPeak} />
       <Modal show={isPeakShowVisible} onClose={handleHidePeak}>
-        <PeaksShow peak={currentPeak} onUpdatePeak={handleUpdatePeak} />
+        <PeaksShow peak={currentPeak} onUpdatePeak={handleUpdatePeak} onDestroyPeak={handleDestroyPeak} />
       </Modal>
       <PeaksNew onCreatePeak={handleCreatePeak} />
     </div>
