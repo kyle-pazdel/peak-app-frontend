@@ -104,12 +104,12 @@ export function PeaksShow(props) {
           <div className="col-12">
             <input type="submit" id="submit" name="submit" className="btn btn-primary"></input>
           </div>
-          <div className="col-12 pt-3">
-            <button className=" btn btn-sm btn-outline-primary" onClick={handleClick}>
-              Delete Peak
-            </button>
-          </div>
         </form>
+      </div>
+      <div className="col-12 pt-3">
+        <button className=" btn btn-sm btn-outline-primary" onClick={handleClick}>
+          Delete Peak
+        </button>
       </div>
     </div>
   );
