@@ -25,7 +25,7 @@ export function Home() {
   };
 
   const handleUpdatePeak = (params) => {
-    axios.patch("http://localhost:3000/peaks/" + params.id + ".json", params).then((response) => {
+    axios.patch("http://localhost:3000/peaks/" + currentPeak.id + ".json", params).then((response) => {
       const updatedPeak = response.data;
       setCurrentPeak(updatedPeak);
       setPeaks(
@@ -55,7 +55,7 @@ export function Home() {
     <div>
       <PeaksIndex peaks={peaks} onSelectPeak={handleShowPeak} />
       <Modal show={isPeakShowVisible} onClose={handleHidePeak}>
-        <PeaksShow peak={currentPeak} />
+        <PeaksShow peak={currentPeak} onUpdatePeak={handleUpdatePeak} />
       </Modal>
       <PeaksNew onCreatePeak={handleCreatePeak} />
     </div>

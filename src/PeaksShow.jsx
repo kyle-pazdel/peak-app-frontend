@@ -2,6 +2,7 @@ export function PeaksShow(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
+    props.onUpdatePeak(params);
     event.target.reset();
   };
 
