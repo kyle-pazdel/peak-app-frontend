@@ -10,7 +10,6 @@ export function PeaksIndex(props) {
           <div className="card-body bg-custom-1">
             <img src={peak.images[0].url} className="card-img-top" alt={peak.description} />
             <h2 className="card-title bg-custom-1">{peak.name}</h2>
-            <p>{peak.created_at}</p>
             <button className="btn btn-primary" onClick={() => props.onSelectPeak(peak)}>
               More Info
             </button>
