@@ -1,15 +1,15 @@
-import axios from "axios";
-
 export function PeaksNew(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log("Product Added");
     const params = new FormData(event.target);
+    props.onCreatePeak(params);
     event.target.reset();
   };
 
   return (
     <div>
-      <h1>New Product</h1>
+      <h1>New Peak</h1>
       <form className="row g-3" onSubmit={handleSubmit}>
         <div className="col-md-6">
           <label for="name" className="form-label">
@@ -23,7 +23,6 @@ export function PeaksNew(props) {
           </label>
           <input type="text" id="image" name="image" className="form-control"></input>
         </div>
-        ]
         <div className="col-md-6">
           <label for="location" className="form-label">
             Location
@@ -35,12 +34,6 @@ export function PeaksNew(props) {
             Elevation(ft)
           </label>
           <input type="number" id="elevation" name="elevation" className="form-control"></input>
-        </div>
-        <div className="col-md-12">
-          <label for="description" className="form-label">
-            Description
-          </label>
-          <input type="text" id="description" name="description" className="form-control"></input>
         </div>
         <div className="col-md-12">
           <label for="description" className="form-label">
