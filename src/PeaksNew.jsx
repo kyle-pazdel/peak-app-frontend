@@ -8,7 +8,7 @@ export function PeaksNew(props) {
   };
 
   return (
-    <div>
+    <div id="peaks-new">
       <h1>New Peak</h1>
       <form className="row g-3" onSubmit={handleSubmit}>
         <div className="col-md-6">
