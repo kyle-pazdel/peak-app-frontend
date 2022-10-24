@@ -24,6 +24,22 @@ export function Home() {
     });
   };
 
+  const handleUpdatePeak = (params) => {
+    axios.patch("http://localhost:3000/peaks/" + params.id + ".json", params).then((response) => {
+      const updatedPeak = response.data;
+      setCurrentPeak(updatedPeak);
+      setPeaks(
+        peaks.map((peak) => {
+          if (peak.id === updatedPeak.id) {
+            return updatedPeak;
+          } else {
+            return peak;
+          }
+        })
+      );
+    });
+  };
+
   const handleShowPeak = (peak) => {
     setIsPeakShowVisible(true);
     setCurrentPeak(peak);
