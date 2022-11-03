@@ -13,10 +13,10 @@ export function PeaksShow(props) {
   return (
     <div>
       <div id="peaks-show">
-        {/* <div id="carouselExampleControls" className="carousel slide mt-5 mb-3" data-bs-ride="carousel">
+        <div id="carouselExampleControls" className="carousel slide mt-5 mb-3" data-bs-ride="carousel">
           <div className="carousel-inner">
             {props.peak.images.map((image) => (
-              <div className="carousel-item active">
+              <div className="carousel-item active" key={image.id}>
                 <img src={image.url} className="d-block w-100" alt={props.peak.description} />
               </div>
             ))}
@@ -39,7 +39,7 @@ export function PeaksShow(props) {
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Next</span>
           </button>
-        </div> */}
+        </div>
         <h2>{props.peak.name}</h2>
         <p>{props.peak.description}</p>
         <p>{props.peak.location}</p>
